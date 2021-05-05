@@ -1,0 +1,34 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "Backend para la pasteleria",
+  "main": "src/index.js",
+  "repository": "todo",
+  "author": ".",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "core-js": "3",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.14.1",
+    "crossenv": "^0.0.2-security",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  },
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node",
+    "build": "crossenv BABEL_ENV=production babel server --out-dir dist",
+    "build:client": "NODE_PATH=src react-scripts build",
+    "format": "prettier --write"
+  }
+}
