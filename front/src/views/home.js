@@ -1,38 +1,33 @@
-import { Typography } from "@material-ui/core";
+import { Typography, Grid, container, Card, CardMedia } from "@material-ui/core";
 import React from "react";
 import primera from './images/primera.jpg';
 import ultima from './images/ultima.jpg';
 
 const Home = () => {
   return (
-	<div style={{'background-color':'#E7D8C9'}}> 
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-		<div class="w3-content" style={{'max-width':'2000px'}}>
+	<div style={{'background-color':'#E7D8C9'}}>  
+		<Grid container justify = "center">
+			
+			<CardMedia component="img" alt="Pasteleria" image={primera} title="Pasteleria" style={{'width':'50%','display': 'block', 'margin-left':'auto', 'margin-right':'auto'}} /> 
+			<div style={{position: 'absolute',top: '50%',width: '100%',textAlign: 'center',color: 'black',backgroundColor: 'none'}}>
+				<h3 style={{'color':'black'}}>Pasteleria Name</h3>
+				<Typography style={{'color':'black'}}><b>Una delicia que nunca olvidaras</b></Typography>
+			</div>
 
-			<div class="w3-center w3-display-container ">
-				<img src={primera} alt="primera" style={{'width':'50%','display': 'block', 'margin-left':'auto', 'margin-right':'auto'}}/>
-				<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small" >
-				  <h3 style={{'color':'black'}}>Pasteleria Name</h3>
-				  <p style={{'color':'black'}}><b>Una delicia que nunca olvidaras</b></p>    
+			<div style={{'max-width':'800px',padding:'64px'}}>
+				<h2>¿Quienes Somos?</h2>
+				<div >
+					<Typography><i>Amamos crear comida</i></Typography>
+					<Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+					  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+					  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Typography>
 				</div>
 			</div>
-
-			<div class=" w3-content" style={{'max-width':'800px'}}>
-				<h2 class="w3-wide">¿Quienes Somos?</h2>
-				<div class=" w3-container w3-center w3-padding-32">
-					<p class="w3-opacity"><i>Amamos crear comida</i></p>
-					<p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-					  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-					  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					</div>
-			</div>
-
-
-			<img src={ultima} alt="foto de final" class="w3-image w3-greyscale-min" style={{'width':'50%','display': 'block', 'margin-left':'auto', 'margin-right':'auto'}}/>
 			
-		</div>
+
+			<img src={ultima} alt="foto de final" style={{'width':'50%','display': 'block', 'margin-left':'auto', 'margin-right':'auto'}}/>
+			
+		</Grid>
 	</div> 
   );
 };
