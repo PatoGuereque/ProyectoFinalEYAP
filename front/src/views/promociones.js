@@ -1,38 +1,64 @@
-import { Typography } from "@material-ui/core";
+import { Typography, makeStyles, Container, Grid, Card, CardMedia, CardContent, CardActions, Button } from "@material-ui/core";
 import React from "react";
 import primera from './images/primera.jpg'; 
 
+const styles = makeStyles((theme) => ({
+  cardGrid: {
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
+  },
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardMedia: {
+    paddingTop: '56.25%',
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+}));
+
+const promos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 const Promociones = () => {
+  const style = styles();
+	
   return (
 	<div style={{'background-color':'#E7D8C9'}}> 
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-		
-		<div class="w3-content" style={{'max-width':'2000px'}}>
-
-			<div class="w3-center w3-display-container" style = {{'display':'grid', 'grid-template-columns':'1fr 1fr', 'grid-template-rows':'auto', 'grid-gap':'20px'}}>
-				<div>
-					<img src={primera} alt="primera" style={{'width':'75%'}}/>
-				</div>
-				<div>
-					<img src={primera} alt="primera" style={{'width':'75%'}}/>
-				</div>
-				<div>
-					<img src={primera} alt="primera" style={{'width':'75%'}}/>
-				</div>
-				<div>
-					<img src={primera} alt="primera" style={{'width':'75%'}}/>
-				</div>
-				<div>
-					<img src={primera} alt="primera" style={{'width':'75%'}}/>
-				</div>
-				
-			</div>
-			
-		</div>
+		<Container className={style.cardGrid} maxWidth="md">
+          <Grid container spacing={5}>
+            {promos.map((promo) => (
+              <Grid item key={promo} xs={12} sm={6} md={4}>
+                <Card className={style.card}>
+                  <CardMedia
+                    className={style.cardMedia}
+                    image={primera}
+                    title="Image title"
+                  />
+                  <CardContent className={style.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {promo}
+                    </Typography>
+                    <Typography>
+                      This is a media card. You can use this section to describe the content.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      View {/* en caso de que se use un boton o algo (?*/}
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
 	</div> 
   );
 };
+
+
 
 export default Promociones;
