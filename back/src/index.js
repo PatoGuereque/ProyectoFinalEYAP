@@ -1,5 +1,5 @@
 import app from "./app";
-const port = 1234;
+const port = process.env.PORT || 1234;
 
 const start = async () => {
   try {
