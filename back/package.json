@@ -17,18 +17,23 @@
     "sequelize": "^6.6.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.0",
     "@babel/node": "^7.13.13",
     "@babel/preset-env": "^7.14.1",
-    "crossenv": "^0.0.2-security",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.7",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "shx": "^0.3.3"
   },
   "scripts": {
     "start": "nodemon src/index.js --exec babel-node",
-    "build": "crossenv BABEL_ENV=production babel server --out-dir dist",
-    "build:client": "NODE_PATH=src react-scripts build",
-    "format": "prettier --write"
+    "build": "yarn clean && yarn build:server && yarn build:client && yarn mergefront",
+    "build:server": "cross-env BABEL_ENV=production babel src --out-dir dist",
+    "build:client": "cd ../front/ && yarn build",
+    "mergefront": "yarn shx mv ../front/build dist/static",
+    "format": "prettier --write",
+    "clean": "yarn shx rm -rf ../front/build dist"
   }
 }

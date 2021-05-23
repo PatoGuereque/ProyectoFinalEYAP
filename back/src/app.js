@@ -4,13 +4,13 @@ import morgan from "morgan";
 import { join } from "path";
 
 const app = express();
-const buildPath = join(`${__dirname}/../build`);
+const buildPath = join(`${__dirname}/static`);
 
 app.use(helmet());
 app.use(morgan("common"));
 app.use(express.json());
 
-app.get("/", (_req, res) => {
+app.get("/api", (_req, res) => {
   res.status(200).send("API working");
 });
 
