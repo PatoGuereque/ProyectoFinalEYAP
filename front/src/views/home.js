@@ -1,4 +1,4 @@
-import { Typography, Grid, container, Card, CardMedia } from "@material-ui/core";
+import { Typography, Grid, CardMedia } from "@material-ui/core";
 import React from "react";
 import primera from './images/primera.jpg';
 import ultima from './images/ultima.jpg';
@@ -6,27 +6,24 @@ import ultima from './images/ultima.jpg';
 const Home = () => {
   return (
 	<div style={{'background-color':'#E7D8C9'}}>  
-		<Grid container justify = "center">
+		<Grid container xs="12" justify = "center" alignItems="center">
+			<Grid item xs={12}>
+				<CardMedia component="img" alt="Pasteleria" image={primera} title="Pasteleria" style={{'width':'50%','display': 'block', 'margin-left':'auto', 'margin-right':'auto'}} /> 
+			</Grid>
 			
-			<CardMedia component="img" alt="Pasteleria" image={primera} title="Pasteleria" style={{'width':'50%','display': 'block', 'margin-left':'auto', 'margin-right':'auto'}} /> 
-			<div style={{position: 'absolute',top: '50%',width: '100%',textAlign: 'center',color: 'black',backgroundColor: 'none'}}>
-				<h3 style={{'color':'black'}}>Pasteleria Name</h3>
-				<Typography style={{'color':'black'}}><b>Una delicia que nunca olvidaras</b></Typography>
-			</div>
-
-			<div style={{'max-width':'800px',padding:'64px'}}>
+			<Grid item xs={12} style={{'max-width':'800px',padding:'64px'}}>
 				<h2>¿Quienes Somos?</h2>
-				<div >
+				<div>
 					<Typography><i>Amamos crear comida</i></Typography>
 					<Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 					  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
 					  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Typography>
 				</div>
-			</div>
+			</Grid>
 			
-
-			<img src={ultima} alt="foto de final" style={{'width':'50%','display': 'block', 'margin-left':'auto', 'margin-right':'auto'}}/>
-			
+			<Grid item xs={12}>
+				<img src={ultima} alt="foto de final" style={{'width':'50%','display': 'block', 'margin-left':'auto', 'margin-right':'auto'}}/>
+			</Grid>
 		</Grid>
 	</div> 
   );
