@@ -7,7 +7,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { Home, Products, Sucursales, Contact } from "../views";
+import { Home, Products, Sucursales, Contact, Promociones } from "../views";
 
 const routes = [
   {
@@ -29,6 +29,11 @@ const routes = [
     name: "Contacto",
     ruta: "/contacto",
     component: Contact,
+  },
+  {
+    name: "Promociones",
+    ruta: "/promociones",
+    component: Promociones,
   },
 ];
 
