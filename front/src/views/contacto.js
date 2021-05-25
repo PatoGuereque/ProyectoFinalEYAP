@@ -1,59 +1,58 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import React from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Link from "@material-ui/core/Link";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import { Paper } from "@material-ui/core";
 
 function Copyright() {
-    return (
-      <Typography variant="body2" color="textSecondary" align="center">
-        {'Copyright © '}
-        <Link color="inherit" href="/">
-          eyap.com
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
-  
-  const useStyles = makeStyles((theme) => ({
-    paper: {
-      marginTop: theme.spacing(8),
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-    avatar: {
-      margin: theme.spacing(1),
-      backgroundColor: theme.palette.secondary.main,
-    },
-    form: {
-      width: '100%', // Fix IE 11 issue.
-      marginTop: theme.spacing(3),
-    },
-    submit: {
-      margin: theme.spacing(3, 0, 2),
-    },
-  }));
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {"Copyright © "}
+      <Link color="inherit" href="/">
+        eyap.com
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    padding: theme.spacing(3),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(3),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
 
 const Contact = () => {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="md" style={{backgroundColor: '#E7D8C9'}}>
-      <CssBaseline />
-      <div className={classes.paper}>
+    <Container component="main" maxWidth="md">
+      <Paper className={classes.paper}>
         <Avatar className={classes.avatar}>
           <MailOutlineIcon />
         </Avatar>
@@ -80,19 +79,16 @@ const Contact = () => {
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                label="Correo"
-              />
+              <TextField variant="outlined" required fullWidth label="Correo" />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                multiline rows={5} autoComplete="none" 
+                multiline
+                rows={5}
+                autoComplete="none"
                 label="Mensaje"
               />
             </Grid>
@@ -106,7 +102,7 @@ const Contact = () => {
           <Button
             type="submit"
             size="large"
-            style={{margin: '0 auto', display: "flex", borderRadius: '5px'}}
+            style={{ margin: "0 auto", display: "flex", borderRadius: "5px" }}
             variant="contained"
             color="primary"
             className={classes.submit}
@@ -114,13 +110,12 @@ const Contact = () => {
             Enviar
           </Button>
         </form>
-      </div>
+      </Paper>
       <Box mt={5}>
         <Copyright />
       </Box>
     </Container>
-    
-  )
+  );
 };
 
 export default Contact;
