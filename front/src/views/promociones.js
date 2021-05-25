@@ -1,6 +1,5 @@
-import { Typography, makeStyles, Container, Grid, Card, CardMedia, CardContent, CardActions, Button } from "@material-ui/core";
+import { Typography, makeStyles, Container, Grid, Card, CardMedia, CardContent } from "@material-ui/core";
 import React from "react";
-import primera from './images/primera.jpg'; 
 
 const styles = makeStyles((theme) => ({
   cardGrid: {
@@ -20,7 +19,33 @@ const styles = makeStyles((theme) => ({
   },
 }));
 
-const promos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const promociones = [
+  {
+    title: "Promoción 2x1",
+    image: "/images/promocion2x1.png",
+    description: "¡Disfruta de nuestras promociones 2x1! Válido solo hasta el 30 de mayo de 2021",
+  },
+   {
+    title: "Promoción 3x1",
+    image: "/images/promocion2x1.png",
+    description: "¡Disfruta de nuestras promociones 3x1! Válido solo hasta el 30 de Agosto de 2021",
+  },
+   {
+    title: "Promoción 1x2 xd",
+    image: "/images/promocion2x1.png",
+    description: "¡Disfruta de nuestras promociones 1x2! Válido solo hasta el 30 de Junio de 2021",
+  },
+   {
+    title: "Promoción 2x1",
+    image: "/images/promocion2x1.png",
+    description: "¡Disfruta de nuestras promociones 2x1! Válido solo hasta el 30 de Julio de 2021",
+  },
+   {
+    title: "Promoción 2x1",
+    image: "/images/promocion2x1.png",
+    description: "¡Disfruta de nuestras promociones 2x1! Válido solo hasta el 30 de mayo de 2021",
+  },
+];
 
 const Promociones = () => {
   const style = styles();
@@ -29,27 +54,22 @@ const Promociones = () => {
 	<div style={{'background-color':'#E7D8C9'}}> 
 		<Container className={style.cardGrid} maxWidth="md">
           <Grid container spacing={5}>
-            {promos.map((promo) => (
+            {promociones.map((promo) => (
               <Grid item key={promo} xs={12} sm={6} md={4}>
                 <Card className={style.card}>
                   <CardMedia
                     className={style.cardMedia}
-                    image={primera}
+                    image={promo.image}
                     title="Image title"
                   />
                   <CardContent className={style.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      {promo}
+                      {promo.title}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+						{promo.description}
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View {/* en caso de que se use un boton o algo (?*/}
-                    </Button>
-                  </CardActions>
                 </Card>
               </Grid>
             ))}
