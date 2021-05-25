@@ -1,0 +1,8 @@
+{
+  "name": "Pastelería",
+  "description": "Página para una pastelería",
+  "website": "https://proyecto-eyap.herokuapp.com/",
+  "repository": "https://github.com/PatoGuereque/ProyectoFinalEYAP",
+  "success_url": "/",
+  "stack": "container"
+}
