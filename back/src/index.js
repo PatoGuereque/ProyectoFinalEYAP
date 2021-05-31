@@ -1,4 +1,4 @@
-import app from "./app";
+import app from './app';
 const port = process.env.PORT || 1234;
 
 const start = async () => {
@@ -6,7 +6,7 @@ const start = async () => {
     await app.listen(port);
     console.info(`🚀  Server running at port: ${port}`);
   } catch (err) {
-    console.error("Not able to run server");
+    console.error('Not able to run server');
   }
 };
 

@@ -1,17 +1,17 @@
-import express from "express";
-import helmet from "helmet";
-import morgan from "morgan";
-import { join } from "path";
+import express from 'express';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import { join } from 'path';
 
 const app = express();
 const buildPath = join(`${__dirname}/static`);
 
 app.use(helmet());
-app.use(morgan("common"));
+app.use(morgan('common'));
 app.use(express.json());
 
-app.get("/api", (_req, res) => {
-  res.status(200).send("API working");
+app.get('/api', (_req, res) => {
+  res.status(200).send('API working');
 });
 
 app.use((error, _req, res, _next) => {
@@ -23,13 +23,13 @@ app.use((error, _req, res, _next) => {
 
   res.json({
     message: error.message,
-    stack: process.env.NODE_ENV === "production" ? "🥞" : error.stack,
+    stack: process.env.NODE_ENV === 'production' ? '🥞' : error.stack,
   });
 });
 
 app.use(express.static(buildPath));
 
-app.get("*", (_req, res) => {
+app.get('*', (_req, res) => {
   res.sendFile(`${buildPath}/index.html`);
 });
 

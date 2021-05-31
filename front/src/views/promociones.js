@@ -6,8 +6,10 @@ import {
   Card,
   CardMedia,
   CardContent,
-} from "@material-ui/core";
-import React from "react";
+  CardActions,
+} from '@material-ui/core';
+import React from 'react';
+import promociones from '../config/promociones.json';
 
 const styles = makeStyles((theme) => ({
   cardGrid: {
@@ -15,50 +17,17 @@ const styles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(6),
   },
   card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: "56.25%",
+    paddingTop: '90%',
   },
   cardContent: {
     flexGrow: 1,
   },
 }));
-
-const promociones = [
-  {
-    title: "Promoción 2x1",
-    image: "/images/promocion2x1.png",
-    description:
-      "¡Disfruta de nuestras promociones 2x1! Válido solo hasta el 30 de mayo de 2021",
-  },
-  {
-    title: "Promoción 3x1",
-    image: "/images/promocion2x1.png",
-    description:
-      "¡Disfruta de nuestras promociones 3x1! Válido solo hasta el 30 de Agosto de 2021",
-  },
-  {
-    title: "Promoción 1x2 xd",
-    image: "/images/promocion2x1.png",
-    description:
-      "¡Disfruta de nuestras promociones 1x2! Válido solo hasta el 30 de Junio de 2021",
-  },
-  {
-    title: "Promoción 2x1",
-    image: "/images/promocion2x1.png",
-    description:
-      "¡Disfruta de nuestras promociones 2x1! Válido solo hasta el 30 de Julio de 2021",
-  },
-  {
-    title: "Promoción 2x1",
-    image: "/images/promocion2x1.png",
-    description:
-      "¡Disfruta de nuestras promociones 2x1! Válido solo hasta el 30 de mayo de 2021",
-  },
-];
 
 const Promociones = () => {
   const style = styles();
@@ -66,8 +35,8 @@ const Promociones = () => {
   return (
     <Container className={style.cardGrid} maxWidth="md">
       <Grid container spacing={5}>
-        {promociones.map((promo) => (
-          <Grid item key={promo} xs={12} sm={6} md={4}>
+        {promociones.map((promo, index) => (
+          <Grid item key={index} xs={12} sm={6} md={4}>
             <Card className={style.card}>
               <CardMedia
                 className={style.cardMedia}
@@ -78,8 +47,13 @@ const Promociones = () => {
                 <Typography gutterBottom variant="h5" component="h2">
                   {promo.title}
                 </Typography>
-                <Typography>{promo.description}</Typography>
+                {promo.description.map((desc, index) => (
+                  <Typography key={index}>{desc}</Typography>
+                ))}
               </CardContent>
+              <CardActions>
+                <Typography key={index}>{promo.expiry}</Typography>
+              </CardActions>
             </Card>
           </Grid>
         ))}

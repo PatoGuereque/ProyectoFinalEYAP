@@ -1,45 +1,44 @@
-import { Typography, Grid } from "@material-ui/core";
-import React from "react";
-import ultima from "./images/ultima.jpg";
+import React from 'react';
+import { Typography, Grid, Container } from '@material-ui/core';
+import LazyLoad from 'react-lazyload';
 
 const Home = () => {
   return (
-    <Grid container justify="center">
-      <Grid item xs={12} style={{ "max-width": "800px", padding: "64px" }}>
-        <h2>¿Quienes Somos?</h2>
-        <div>
-          <Typography>
-            <i>Amamos crear comida</i>
-          </Typography>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </Typography>
-        </div>
+    <Container component="main" maxWidth="md">
+      <Grid container justify="center">
+        <Grid item xs={12}>
+          <LazyLoad once>
+            <img
+              src="/images/BannerInicio.png"
+              alt="foto de final"
+              style={{
+                width: '100%',
+                display: 'block',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
+            />
+          </LazyLoad>
+        </Grid>
+        <Grid item xs={12}>
+          <h2>¿Quienes Somos?</h2>
+          <div>
+            <Typography>
+              <i>Amamos crear comida</i>
+            </Typography>
+            <Typography>
+              Somos un negocio local con más de 10 años de experiencia en el
+              mundo de la repostería, siempre estamos buscando la manera de
+              mejorar la calidad de nuestros productos y ampliar nuestro
+              catálogo para traerte sólo lo mejor. ¡Celebra tus mejores momentos
+              con nosotros! Contamos con sucursales en diferentes zonas de Nuevo
+              León como Monterrey, San Nicolás, Apodaca y Santiago, ¡visítanos y
+              encuentra nuestros postres en la más cercana!
+            </Typography>
+          </div>
+        </Grid>
       </Grid>
-
-      <Grid item xs={12}>
-        <img
-          src={ultima}
-          alt="foto de final"
-          style={{
-            width: "50%",
-            display: "block",
-            "margin-left": "auto",
-            "margin-right": "auto",
-          }}
-        />
-      </Grid>
-    </Grid>
+    </Container>
   );
 };
 
